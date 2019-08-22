@@ -73,7 +73,7 @@ fi
 #  Check the VPN connection
 #-------------------------------------------------------------------------------
 
-if [[ $(/usr/syno/bin/synovpnc get_conn | grep Uptime) ]]; then
+if ping -c1 192.168.0.157 >/dev/null; then
 	echo "[I] VPN is already connected. Exiting..."
 	exit 0
 fi
