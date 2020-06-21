@@ -48,7 +48,7 @@ sleep 20
 #  Re-check the VPN connection
 #-------------------------------------------------------------------------------
 
-if [[ $(/usr/syno/bin/synovpnc get_conn | grep Uptime) ]] ping -c1 8.8.8.8 >/dev/null; then
+if [[ $(/usr/syno/bin/synovpnc get_conn | grep Uptime) ]] && ping -c1 8.8.8.8 >/dev/null; then
 	echo "[I] VPN successfully reconnected. Exiting..."
 	exit 0
 else
